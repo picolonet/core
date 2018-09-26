@@ -46,6 +46,14 @@
   revision = "8152e7eb6ccf8679a64582a66b78519688d156ad"
 
 [[projects]]
+  branch = "master"
+  digest = "1:73f8f3d39f0f3100420067b1ea4d98533ac96526faef38e3646ebf43aa4ff246"
+  name = "github.com/jasonlvhit/gocron"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "54194c9749d48b073c9aeb2c787b6882e95dd0cd"
+
+[[projects]]
   digest = "1:16e6fde687529deaefbeff14841b694cb6d67dfc31884bac6214313e96e107bc"
   name = "github.com/rhysd/go-github-selfupdate"
   packages = ["selfupdate"]
@@ -117,6 +125,7 @@
   analyzer-version = 1
   input-imports = [
     "github.com/blang/semver",
+    "github.com/jasonlvhit/gocron",
     "github.com/rhysd/go-github-selfupdate/selfupdate",
   ]
   solver-name = "gps-cdcl"

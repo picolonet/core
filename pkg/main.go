@@ -3,29 +3,32 @@ package main
 import (
 	"fmt"
 	"github.com/blang/semver"
+	"github.com/jasonlvhit/gocron"
 	"github.com/rhysd/go-github-selfupdate/selfupdate"
 )
 
-var version = "1.0.0"
+const version = "1.0.3"
 
 func selfUpdate() error {
 	selfupdate.EnableLog()
 
-	previous := semver.MustParse(version)
-	latest, err := selfupdate.UpdateSelf(previous, "picolonet/codepusher")
+	current := semver.MustParse(version)
+	fmt.Println("Current version is", current)
+	latest, err := selfupdate.UpdateSelf(current, "picolonet/codepusher")
 	if err != nil {
 		return err
 	}
 
-	if previous.Equals(latest.Version) {
+	if current.Equals(latest.Version) {
 		fmt.Println("Current binary is the latest version", version)
 	} else {
 		fmt.Println("Update successfully done to version", latest.Version)
-		fmt.Println("Release note:\n", latest.ReleaseNotes)
+		fmt.Println("Release notes:\n", latest.ReleaseNotes)
 	}
 	return nil
 }
 
 func main() {
-	selfUpdate()
+	gocron.Every(1).Day().At("18:29").Do(selfUpdate)
+	<-gocron.Start()
 }
