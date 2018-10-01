@@ -9,6 +9,7 @@ import (
 	"github.com/rhysd/go-github-selfupdate/selfupdate"
 	"google.golang.org/genproto/googleapis/type/latlng"
 	"log"
+	"time"
 )
 
 //todo: fix logging
@@ -25,7 +26,13 @@ var fbApp *firebase.App
 var ctx = context.Background()
 
 func main() {
-	gocron.Every(1).Day().At("13:00").Do(selfUpdate) //todo: check timezone
+	PST, err := time.LoadLocation("America/Los_Angeles")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	gocron.ChangeLoc(PST)
+	gocron.Every(1).Day().At("13:00").Do(selfUpdate)
 	initializeAppWithServiceAccount()
 	register("clusterId")
 	throwFlare()
