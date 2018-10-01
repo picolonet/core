@@ -14,7 +14,7 @@ func selfUpdate() error {
 
 	current := semver.MustParse(version)
 	fmt.Println("Current version is", current)
-	latest, err := selfupdate.UpdateSelf(current, "picolonet/codepusher")
+	latest, err := selfupdate.UpdateSelf(current, "picolonet/core")
 	if err != nil {
 		return err
 	}
@@ -29,6 +29,6 @@ func selfUpdate() error {
 }
 
 func main() {
-	gocron.Every(1).Day().At("18:29").Do(selfUpdate)
+	gocron.Every(1).Day().At("13:00").Do(selfUpdate)
 	<-gocron.Start()
 }
