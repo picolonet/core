@@ -109,12 +109,28 @@
   revision = "54194c9749d48b073c9aeb2c787b6882e95dd0cd"
 
 [[projects]]
+  branch = "master"
+  digest = "1:f44d34fda864bed6d6c71514cd40b2ee097e6e67f745d5d014113e1faa5af8b7"
+  name = "github.com/konsorten/go-windows-terminal-sequences"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "b729f2633dfe35f4d1d8a32385f6685610ce1cb5"
+
+[[projects]]
   digest = "1:16e6fde687529deaefbeff14841b694cb6d67dfc31884bac6214313e96e107bc"
   name = "github.com/rhysd/go-github-selfupdate"
   packages = ["selfupdate"]
   pruneopts = "UT"
   revision = "4bfc1aa0302c89605b9bf20a8bb4e1af625bc714"
   version = "v1.0.0"
+
+[[projects]]
+  digest = "1:dc2d85c13ac22c22a1f3170a41a8e1b897fa05134aaf533f16df44f66a25b4a1"
+  name = "github.com/sirupsen/logrus"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "a67f783a3814b8729bd2dac5780b5f78f8dbd64d"
+  version = "v1.1.0"
 
 [[projects]]
   digest = "1:ebabd8967efa341b15e51b329eb5b7ebc69b573fb4adb4ac2433fa532edcadbc"
@@ -138,7 +154,7 @@
   version = "v0.5.4"
 
 [[projects]]
-  digest = "1:8e7fcf54cc7c0c3aba7801812ae70343585b3cb663f6cb11ad50c0c28552f359"
+  digest = "1:1bb914cfb78f68f488a91cd7872d3d06a5f83c5bbacf0296dbef44e120b00a91"
   name = "go.opencensus.io"
   packages = [
     ".",
@@ -157,8 +173,16 @@
     "trace/tracestate",
   ]
   pruneopts = "UT"
-  revision = "79993219becaa7e29e3b60cb67f5b8e82dee11d6"
-  version = "v0.17.0"
+  revision = "b11f239c032624b045c4c2bfd3d1287b4012ce89"
+  version = "v0.16.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:3f3a05ae0b95893d90b9b3b5afdb79a9b3d96e4e36e099d841ae602e4aca0da8"
+  name = "golang.org/x/crypto"
+  packages = ["ssh/terminal"]
+  pruneopts = "UT"
+  revision = "e3636079e1a4c1f337f212cc5cd2aca108f6c900"
 
 [[projects]]
   branch = "master"
@@ -193,24 +217,22 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:e2ced6fdf654069e8713c96012275fbd245381673d53e8c8ace640b28441a28b"
+  digest = "1:6f82ed211591ecb407897ca46ff6149d618223088aecad72675804f106033629"
   name = "golang.org/x/sys"
-  packages = ["unix"]
+  packages = [
+    "unix",
+    "windows",
+  ]
   pruneopts = "UT"
   revision = "e4b3c5e9061176387e7cea65e4dc5853801f3fb7"
 
 [[projects]]
-  digest = "1:a2ab62866c75542dd18d2b069fec854577a20211d7c0ea6ae746072a1dccdd18"
+  digest = "1:ca9ebfc1200ca7423d9778dba9cdd463704753541c99dc4896f15e0b8b2bf1e8"
   name = "golang.org/x/text"
   packages = [
-    "collate",
-    "collate/build",
-    "internal/colltab",
     "internal/gen",
-    "internal/tag",
     "internal/triegen",
     "internal/ucd",
-    "language",
     "secure/bidirule",
     "transform",
     "unicode/bidi",
@@ -219,8 +241,7 @@
     "unicode/rangetable",
   ]
   pruneopts = "UT"
-  revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
-  version = "v0.3.0"
+  revision = "470f45bf29f4147d6fbd7dfd0a02a848e49f5bf4"
 
 [[projects]]
   branch = "master"
@@ -281,7 +302,7 @@
   revision = "c7e5094acea1ca1b899e2259d80a6b0f882f81f8"
 
 [[projects]]
-  digest = "1:4ad047d772a7d4841687df9534a767a9e243885ed6d7d2ced6af5995a5dc44b3"
+  digest = "1:686525281321f81747cfb0bba0bc384511bbdc5cdc92a6aa1afe5f1808f82c36"
   name = "google.golang.org/grpc"
   packages = [
     ".",
@@ -298,9 +319,7 @@
     "internal",
     "internal/backoff",
     "internal/channelz",
-    "internal/envconfig",
     "internal/grpcrand",
-    "internal/transport",
     "keepalive",
     "metadata",
     "naming",
@@ -311,10 +330,11 @@
     "stats",
     "status",
     "tap",
+    "transport",
   ]
   pruneopts = "UT"
-  revision = "8dea3dc473e90c8179e519d91302d0597c0ca1d1"
-  version = "v1.15.0"
+  revision = "168a6198bcb0ef175f7dacec0b8691fc141dc9b8"
+  version = "v1.13.0"
 
 [solve-meta]
   analyzer-name = "dep"
@@ -325,6 +345,7 @@
     "github.com/blang/semver",
     "github.com/jasonlvhit/gocron",
     "github.com/rhysd/go-github-selfupdate/selfupdate",
+    "github.com/sirupsen/logrus",
     "google.golang.org/api/option",
     "google.golang.org/genproto/googleapis/type/latlng",
     "google.golang.org/grpc",
